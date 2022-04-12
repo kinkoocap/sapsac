@@ -31,19 +31,30 @@ var getScriptPromisify = (src) => {
     }
 
 
-
-      ////////////////////////////////////////////////////////////
-     ////First comment: Place the first part of the script here//
-    ////////////////////////////////////////////////////////////
+set myDataSource (dataBinding) {
+this._myDataSource = dataBinding
+this.render()
+}
+customElements.define('com-sap-sample-echartspie_
+chart_demo_xx', SamplePieChart)
+})()
 
 
     async render () {
       await getScriptPromisify('https://cdn.bootcdn.net/ajax/libs/echarts/5.0.0/echarts.min.js')
 
 
-      /////////////////////////////////////////////////////////////
-     ///Second comment: Place the second part of the script here//
-    /////////////////////////////////////////////////////////////
+if (!this._myDataSource || this._myDataSource.state !== 'success') {
+return
+}
+const dimension = this._myDataSource.metadata.feeds.dimensions.values[0]
+const measure = this._myDataSource.metadata.feeds.measures.values[0]
+const data = this._myDataSource.data.map(data => {
+return {
+name: data[dimension].label,
+value: data[measure].raw
+}
+})
 
 
       const myChart = echarts.init(this._root, 'wight')

@@ -38,7 +38,7 @@ var getScriptPromisify = (src) => {
                 this.render()
             }
             customElements.define('com-sap-sample-echartspie_
-                chart_demo_kk ', SamplePieChart)
+                chart_demo_xx ', SamplePieChart)
             })()
 
 
@@ -64,7 +64,45 @@ var getScriptPromisify = (src) => {
             ////////////////////////////////////////////////////////////
             ///Third comment: Place the third part of the script here///
             ////////////////////////////////////////////////////////////
+            constoption = {
+                tooltip: {
+                    trigger: 'item'
+                },
+                legend: {
+                    top: '2%',
+                    left: 'center'
+                },
+                series: [{
+                    name: '',
+                    type: 'pie',
+                    radius: ['40%', '65%'],
+                    avoidLabelOverlap: false,
+                    itemStyle: {
+                        borderRadius: 10,
+                        borderColor: '#fff',
+                        borderWidth: 4
+                    },
+                    label: {
+                        show: false,
+                        position: 'center'
+                    },
+                    emphasis: {
+                        label: {
+                            show: true,
+                            fontSize: '25',
+                            fontWeight: 'bold'
+                        }
+                    },
+                    labelLine: {
+                        show: false
+                    },
+                    data
+                }]
+            }
+            myChart.setOption(option)
+        }
+    }
 
 
-            customElements.define('com-sap-sample-echarts-pie_chart_demo_xx', SamplePieChart)
-        })()
+    customElements.define('com-sap-sample-echarts-pie_chart_demo_xx', SamplePieChart)
+})()

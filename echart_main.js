@@ -38,7 +38,7 @@ var getScriptPromisify = (src) => {
                 this.render()
             }
             customElements.define('com-sap-sample-echartspie_
-                chart_demo_xx ', SamplePieChart)
+                chart_demo_kk ', SamplePieChart)
             })()
 
 

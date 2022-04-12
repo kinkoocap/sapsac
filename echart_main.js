@@ -64,7 +64,7 @@ var getScriptPromisify = (src) => {
             ////////////////////////////////////////////////////////////
             ///Third comment: Place the third part of the script here///
             ////////////////////////////////////////////////////////////
-            constoption = {
+            const option = {
                 tooltip: {
                     trigger: 'item'
                 },

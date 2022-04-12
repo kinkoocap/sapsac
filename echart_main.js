@@ -45,7 +45,9 @@ var getScriptPromisify = (src) => {
             if (!this._myDataSource || this._myDataSource.state !== 'success') {
                 return
             }
-            const dimension = this._myDataSource.metadata.feeds.dimensions.values[0] constmeasure = this._myDataSource.metadata.feeds.measures.values[0] constdata = this._myDataSource.data.map(data => {
+            const dimension = this._myDataSource.metadata.feeds.dimensions.values[0]
+            const measure = this._myDataSource.metadata.feeds.measures.values[0]
+            const data = this._myDataSource.data.map(data => {
                 return {
                     name: data[dimension].label,
                     value: data[measure].raw
